@@ -1,0 +1,5 @@
+<launch>
+	<node pkg="lab3" type="wall_scanner.py" name="Wall_Following_Scanner" />
+	<node pkg="lab3" type="wall_follow.py" name="Wall_Following_Controller" />
+	<node pkg="lab3" type="safety.py" name="Safety_Controller" />
+</launch>

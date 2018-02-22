@@ -1,0 +1,3 @@
+<launch>
+	<node name="cone_finder" pkg="lab4" type="cone_finder.py"/>
+</launch>

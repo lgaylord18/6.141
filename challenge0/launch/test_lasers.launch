@@ -1,0 +1,9 @@
+<launch>
+
+	
+	<include file="$(find ta_lab5)/launch/localize.launch"/>
+	<node name="cone_finder" pkg="challenge0" type="cone_finder.py" output="screen">
+		<param name="odom_topic" value="/pf/pose/odom"/>
+		<param name="scan_topic" value="/scan"/>
+	</node>
+</launch>

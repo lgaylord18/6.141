@@ -1,0 +1,3 @@
+<launch>
+	<node name="line_finder" pkg="lab4" type="line_finder.py"/>
+</launch>

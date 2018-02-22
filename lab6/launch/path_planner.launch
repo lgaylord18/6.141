@@ -1,0 +1,4 @@
+<launch>
+	<include file="$(find ta_lab5)/launch/map_server.launch"/>
+	<node pkg="lab6" type="path_planner.py" name="path_planner" output="screen"/>
+</launch>

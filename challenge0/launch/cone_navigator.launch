@@ -1,0 +1,32 @@
+<launch>
+	<include file="$(find ta_lab5)/launch/localize.launch"/>
+	<arg name="lookahead" default="0.5"/>
+	<arg name="max_reacquire" default="5.0"/>
+	<arg name="speed" default="0.5"/>
+	<arg name="odom_topic" default="/odom"/>
+
+	<node pkg="ta_lab6" type="pure_cone_nav.py" name="Trajectory_follower" output="screen">
+		<!-- <param name="odom_topic" value="$(arg odom_topic)"/> -->
+		<param name="odom_topic" value="/pf/pose/odom"/>
+		<param name="trajectory_topic" value="/trajectory/current"/>
+		<param name="lookahead" value="$(arg lookahead)"/>
+		<param name="max_reacquire" value="$(arg max_reacquire)"/>
+		<param name="speed" value="$(arg speed)"/>
+		<param name="wheelbase" value="0.25"/>
+		<param name="wrap" value="0"/>
+		<param name="drive_topic" value="/vesc/high_level/ackermann_cmd_mux/input/nav_1"/>
+		<param name="follow_type" value="pure_pursuit"/>
+	</node>
+
+	<include file="$(find ta_lab6)/launch/load_trajectory_cone.launch"/>
+
+
+	<node pkg="ta_lab6" type="turnsafety.py" name="Safety_Controller"/>
+
+
+	<node name="cone_finder" pkg="challenge0" type="cone_finder.py" output="screen">
+		<param name="odom_topic" value="/pf/pose/odom"/>
+		<param name="scan_topic" value="/scan"/>
+	</node>
+</launch>
+

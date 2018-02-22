@@ -1,0 +1,3 @@
+<launch>
+    <node name="lidar_data" pkg="lab5" type="lidar_data.py"/>
+</launch>

@@ -1,0 +1,4 @@
+To run this, make sure you have map_server package installed:
+
+sudo apt-get update
+rosdep install -r --from-paths src --ignore-src --rosdistro kinetic -y

@@ -1,0 +1,4 @@
+<launch>
+	<node name="line_finder" pkg="lab4" type="line_finder.py"/>
+	<node name="line_follow" pkg="lab4" type="line_follow.py"/>
+</launch>

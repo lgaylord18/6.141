@@ -1,0 +1,3 @@
+<launch>
+	<node name="line_follow" pkg="lab4" type="openloop_circle.py"/>
+</launch>

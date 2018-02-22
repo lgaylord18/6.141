@@ -1,0 +1,5 @@
+<launch>
+	<node name="cone_finder" pkg="lab4" type="cone_finder.py"/>
+	<node name="cone_follow" pkg="lab4" type="cone_follow_proportional.py"/>
+	<node name="cone_park" pkg="lab4" type="cone_park.py"/>
+</launch>
